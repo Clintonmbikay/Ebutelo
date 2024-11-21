@@ -1,0 +1,142 @@
+#pricing {
+    margin: 100px 0;
+}
+
+#pricing .container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.title-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.title-wrapper h1 {
+    text-align: center;
+}
+
+#pricing .container .switch-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin: 25px 0;
+
+}
+
+#pricing .container .switch-wrapper .switch {
+    min-width: 50px;
+    height: 25px;
+    border-radius: 50px;
+    background: #fff;
+    border: 2px solid #104169;
+    position: relative;
+    cursor: pointer;
+}
+
+#pricing .container .switch-wrapper .switch .bull {
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    background: #104169;
+    background: linear-gradient(to right, #104169 11%, #0F6E80 100%);
+    transform: translate(1px, 0.5px);
+    transition: all ease-in-out 0.3s;
+}
+
+.pricing-table .online {
+    display: none;
+}
+
+.pricing-table {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-radius: 8px;
+    overflow: auto;
+
+}
+
+* th {
+    color: #ebebeb;
+    font-size: 14px;
+    height: 60px;
+}
+
+th:nth-child(2) {
+    width: 300px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    text-align: left;
+}
+
+.pricing-table table thead {
+    background: #104169;
+    background: linear-gradient(to right, #104169 11%, #0F6E80 100%);
+    color: #fff !important;
+}
+
+thead th {
+    padding: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.module-group {
+    background: #1041691c;
+}
+
+td,
+th {
+    padding: 15px;
+    border: 1px solid #dee2e6;
+}
+
+tr .item {
+    font-weight: bold;
+    color: #dee2e6;
+    background: #104169;
+}
+
+.pricing-table table {
+    animation: fadeInUp 1.5s ease-in-out;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media screen and (max-width:426px) {
+    h1 {
+        font-size: 2.3em;
+    }
+
+
+    .switch-wrapper span {
+        text-align: center;
+        font-size: 14px;
+    }
+
+    #pricing .container .switch-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+
+    }
+}
