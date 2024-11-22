@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import gsap from 'gsap';
 import { Link } from "react-router-dom";
 import { useGSAP } from "@gsap/react";
@@ -7,6 +7,9 @@ import FooterComponent from './components/footer'
 import Faqs from "./components/faqs";
 import animationGsap from "../public/animations";
 import WroteEffect from "../public/textEffect";
+import Modal from "./components/modal/modal";
+
+
 function loadAnimation() {
   useGSAP(() => {
     const tl = gsap.timeline();
@@ -55,9 +58,17 @@ export default function App() {
   useCounterAnimation("project", 0, 10, 3000, 2500);
   useCounterAnimation("country", 0, 3, 3000, 2500);
 
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
+
+
   return (
     <div className='App'>
-      <HeaderComponent />
+      <HeaderComponent openModal={openModal} />
+      <Modal isOpen={isModalOpen} closeModal={closeModal} />
+
       <section id="hero">
         <div className="circle-blur"></div>
         <div className="container">

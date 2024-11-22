@@ -136,45 +136,7 @@ header .hamburger::after {
     bottom: 10px;
 }
 
-@media screen and (max-width:1000px) {
-    nav ul li {
-        margin: 0 10px;
-    }
 
-    #hero .container .left-side h1 {
-        font-size: 3em;
-    }
-}
-
-@media screen and (max-width:900px) {
-    nav {
-        background: rgba(255, 255, 255);
-        border-radius: 10px;
-        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-        backdrop-filter: blur(5px);
-        -webkit-backdrop-filter: blur(5px);
-        border: 1px solid #0f6d8061;
-        width: 200px;
-        padding: 10px 50px;
-        position: absolute;
-        right: 0;
-        top: 65px;
-        display: none;
-    }
-
-    nav.open {
-        display: block;
-    }
-
-    nav ul li {
-        display: block;
-        margin: 20px 0;
-    }
-
-    header .hamburger {
-        display: block;
-    }
-}
 
 /* ********************************* Hero Section ************************************* */
 
@@ -806,21 +768,15 @@ footer .container .wrapper {
     gap: 80px;
     justify-content: space-between;
     flex-wrap: wrap;
-    /* Permet aux colonnes de passer à la ligne si nécessaire */
     margin-bottom: 50px;
     width: 100%;
-    /* S'assure que le contenu utilise tout l'espace disponible */
     max-width: 1200px;
-    /* Limite la largeur sur les grands écrans */
 }
 
 footer .container .wrapper .col {
     flex: 1;
-    /* Chaque colonne prend une largeur égale */
     min-width: 250px;
-    /* Largeur minimale pour éviter une colonne trop petite */
     margin-bottom: 30px;
-    /* Espacement entre les colonnes sur petits écrans */
     color: #f7f9fb;
 }
 
@@ -1094,6 +1050,46 @@ footer .container hr {
 }
 
 /* ********************************************** Mobile ***************************************************** */
+@media screen and (max-width:1000px) {
+    nav ul li {
+        margin: 0 10px;
+    }
+
+    #hero .container .left-side h1 {
+        font-size: 3em;
+    }
+}
+
+@media screen and (max-width:900px) {
+    nav {
+        background: rgba(255, 255, 255);
+        border-radius: 10px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        border: 1px solid #0f6d8061;
+        width: 200px;
+        padding: 10px 50px;
+        position: absolute;
+        right: 0;
+        top: 65px;
+        height: 185px;
+        display: none;
+    }
+
+    nav.open {
+        display: block;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 20px 0;
+    }
+
+    header .hamburger {
+        display: block;
+    }
+}
 
 @media screen and (max-width:426px) {
     header .logo img {

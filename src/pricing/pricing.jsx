@@ -1,8 +1,26 @@
-import React, { Component } from 'react'
+import React, { Component, useEffect } from 'react'
 import './style.css'
 import HeaderComponent from '../components/header'
 import FooterComponent from '../components/footer'
 export default class PricingPage extends Component {
+
+    switchChanges() {
+        const bull = document.querySelector('.bull');
+        const onlinePrice = document.querySelector('.online');
+        const offlinePrice = document.querySelector('.offline');
+
+        const isOnLeft = bull.style.transform === 'translate(1px, 0.5px)' || bull.style.transform === '';
+        if (isOnLeft) {
+            bull.style.transform = 'translate(26px, 0.5px)';
+            onlinePrice.style.display = 'initial';
+            offlinePrice.style.display = 'none';
+        } else {
+            bull.style.transform = 'translate(1px, 0.5px)';
+            onlinePrice.style.display = 'none';
+            offlinePrice.style.display = 'initial';
+        }
+    }
+
     render() {
         return (
             <div>
@@ -14,8 +32,8 @@ export default class PricingPage extends Component {
                         </div>
                         <div class="switch-wrapper">
                             <span>Installation Hors ligne</span>
-                            <div class="switch">
-                                <div class="bull change"></div>
+                            <div class="switch" onClick={this.switchChanges}>
+                                <div class="bull"></div>
                             </div>
                             <span>Installation En ligne</span>
                         </div>

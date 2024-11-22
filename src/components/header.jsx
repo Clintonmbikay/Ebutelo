@@ -5,6 +5,7 @@ import { gsap } from "gsap";
 class HeaderComponent extends Component {
     constructor(props) {
         super(props);
+        // Références pour manipuler les éléments DOM
         this.navRef = createRef();
         this.navMenuRef = createRef();
         this.hamburgerRef = createRef();
@@ -13,6 +14,7 @@ class HeaderComponent extends Component {
     }
 
     componentDidMount() {
+        // Ajout des écouteurs d'événements pour le menu et le scroll
         const hamburger = this.hamburgerRef.current;
         if (hamburger) {
             hamburger.addEventListener("click", this.toggleMenu);
@@ -21,6 +23,7 @@ class HeaderComponent extends Component {
     }
 
     componentWillUnmount() {
+        // Nettoyage des écouteurs d'événements
         const hamburger = this.hamburgerRef.current;
         if (hamburger) {
             hamburger.removeEventListener("click", this.toggleMenu);
@@ -29,6 +32,7 @@ class HeaderComponent extends Component {
     }
 
     toggleMenu = () => {
+        // Animation d'ouverture/fermeture du menu
         const nav = this.navRef.current;
 
         if (nav.classList.contains("open")) {
@@ -49,6 +53,7 @@ class HeaderComponent extends Component {
     };
 
     handleScroll = () => {
+        // Animation de la barre de navigation au scroll
         const navMenu = this.navMenuRef.current;
         const logo = this.logoRef.current;
         const button = this.buttonRef.current;
@@ -60,11 +65,7 @@ class HeaderComponent extends Component {
             const tl = gsap.timeline();
             mm.add("(min-width: 426px)", () => {
                 tl.to(navMenu, { width: "50%", duration: 0.5 })
-                    .to(
-                        logo,
-                        { height: "30px", duration: 0.5 },
-                        0
-                    )
+                    .to(logo, { height: "30px", duration: 0.5 }, 0)
                     .to(
                         button,
                         {
@@ -81,11 +82,7 @@ class HeaderComponent extends Component {
             const tl = gsap.timeline();
             mm.add("(min-width: 426px)", () => {
                 tl.to(navMenu, { width: "80%", duration: 0.5 })
-                    .to(
-                        logo,
-                        { height: "50px", duration: 0.5 },
-                        0
-                    )
+                    .to(logo, { height: "50px", duration: 0.5 }, 0)
                     .to(
                         button,
                         {
@@ -102,6 +99,7 @@ class HeaderComponent extends Component {
     };
 
     render() {
+        const { openModal } = this.props; // Récupération de la prop openModal
         return (
             <header>
                 <div className="container" ref={this.navMenuRef}>
@@ -111,8 +109,10 @@ class HeaderComponent extends Component {
                                 ref={this.logoRef}
                                 src="../../public/images/ebutelo.png"
                                 alt="Logo Ebutelo"
-                            /></Link>
+                            />
+                        </Link>
                     </div>
+
                     <nav ref={this.navRef}>
                         <ul>
                             <li>
@@ -130,8 +130,14 @@ class HeaderComponent extends Component {
                         </ul>
                     </nav>
 
+                    {/* Bouton pour ouvrir le modal */}
+                    <button
+                        ref={this.buttonRef}
+                        onClick={openModal}
+                    >
+                        Créer votre compte
+                    </button>
 
-                    <button ref={this.buttonRef}>Créer votre compte</button>
                     <div className="hamburger" ref={this.hamburgerRef}></div>
                 </div>
             </header>
