@@ -59,10 +59,8 @@ export default function App() {
   useCounterAnimation("country", 0, 3, 3000, 2500);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
-
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
-
 
   return (
     <div className='App'>
@@ -200,7 +198,6 @@ export default function App() {
         </div>
       </section>
 
-
       <section id="why-choose-us">
         <div className="container">
           <div className="left-side">
@@ -313,8 +310,6 @@ export default function App() {
           </div>
         </div>
       </section>
-
-
 
       <section id="Call-to-action">
         <div className="container">
