@@ -5,7 +5,7 @@ import { useGSAP } from "@gsap/react";
 import HeaderComponent from './components/header'
 import Faqs from "./components/faqs";
 import animationGsap from "../public/animations";
-import WroteEffect from "../public/textEffect";
+import WroteEffect from "./components/textEffect";
 import Modal from "./components/modal/modal";
 
 
