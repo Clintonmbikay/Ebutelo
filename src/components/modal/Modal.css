@@ -21,7 +21,7 @@
     flex-direction: column;
     gap: 30px;
     background: #f7f9fb;
-    padding: 40px;
+    padding: 25px;
 }
 
 .modal-overlay .modal-content .title-wrapper {
@@ -85,4 +85,14 @@
     text-align: center;
     font-weight: 400;
     color: inherit;
+}
+
+@media screen and (max-width:377px) {
+    .modal-overlay .modal-content .shield-wrapper {
+        gap: 10px;
+    }
+
+    .modal-overlay .modal-content .shield-wrapper .shield-choose h3 {
+        font-size: 12px;
+    }
 }
