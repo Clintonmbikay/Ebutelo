@@ -10,7 +10,6 @@ class Modal extends Component {
             selectedModule: null,
         };
     }
-
     componentDidUpdate(prevProps, prevState) {
         if (this.state.isOpen && !prevState.isOpen) {
             gsap.fromTo(
@@ -71,10 +70,9 @@ class Modal extends Component {
     };
 
     render() {
-        const { isOpen, selectedModule } = this.state;
+        const { isOpen, selectedModule } = this.state
         return (
             <div>
-                <button onClick={this.openModal}>Créer un compte</button>
                 {isOpen && (
                     <div id="shield-modal">
                         <div className="modal-overlay">

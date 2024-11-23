@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import gsap from 'gsap';
 import { Link } from "react-router-dom";
 import { useGSAP } from "@gsap/react";
@@ -58,14 +58,16 @@ export default function App() {
   useCounterAnimation("project", 0, 10, 3000, 2500);
   useCounterAnimation("country", 0, 3, 3000, 2500);
 
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const openModal = () => setIsModalOpen(true);
-  const closeModal = () => setIsModalOpen(false);
-
+  const modalRef = useRef()
+  const handleOpenModal = () => {
+    if (modalRef.current) {
+      modalRef.current.openModal();
+    }
+  }
   return (
     <div className='App'>
-      <HeaderComponent openModal={openModal} />
-      <Modal isOpen={isModalOpen} closeModal={closeModal} />
+      <HeaderComponent openModal={handleOpenModal} />
+      <Modal ref={modalRef} />
 
       <section id="hero">
         <div className="circle-blur"></div>
@@ -366,7 +368,6 @@ export default function App() {
         </div>
       </section>
       <Faqs />
-      <FooterComponent />
     </div>
   )
 }

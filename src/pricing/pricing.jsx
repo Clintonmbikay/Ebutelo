@@ -1,8 +1,12 @@
-import React, { Component, useEffect } from 'react'
+import React, { Component, createRef } from 'react'
 import './style.css'
-import HeaderComponent from '../components/header'
-import FooterComponent from '../components/footer'
+import HeaderComponent from '../components/header';
+import Modal from "../components/modal/modal";
 export default class PricingPage extends Component {
+    constructor(props) {
+        super(props);
+        this.modalRef = createRef();
+    }
 
     switchChanges() {
         const bull = document.querySelector('.bull');
@@ -22,23 +26,29 @@ export default class PricingPage extends Component {
     }
 
     render() {
+        const handleOpenModal = () => {
+            if (this.modalRef.current) {
+                this.modalRef.current.openModal();
+            }
+        }
         return (
             <div>
-                <HeaderComponent />
+                <HeaderComponent openModal={handleOpenModal} />
+                <Modal ref={this.modalRef} />
                 <section id="pricing">
-                    <div class="container">
-                        <div class="title-wrapper">
+                    <div className="container">
+                        <div className="title-wrapper">
                             <h1>Des prix simple et transparents</h1>
                         </div>
-                        <div class="switch-wrapper">
+                        <div className="switch-wrapper">
                             <span>Installation Hors ligne</span>
-                            <div class="switch" onClick={this.switchChanges}>
-                                <div class="bull"></div>
+                            <div className="switch" onClick={this.switchChanges}>
+                                <div className="bull"></div>
                             </div>
                             <span>Installation En ligne</span>
                         </div>
-                        <div class="pricing-table">
-                            <table class="offline">
+                        <div className="pricing-table">
+                            <table className="offline">
                                 <thead>
                                     <tr>
                                         <th>Modules</th>
@@ -51,7 +61,7 @@ export default class PricingPage extends Component {
                                 <tbody>
 
                                     <tr>
-                                        <td rowspan="3" class="item">Restaurant</td>
+                                        <td rowspan="3" className="item">Restaurant</td>
                                         <td>Restaurant</td>
                                         <td>30$</td>
                                         <td>100$</td>
@@ -73,20 +83,20 @@ export default class PricingPage extends Component {
 
                                     {/* Module Point Of Sales */}
 
-                                    <tr class="module-group">
-                                        <td rowspan="3" class="item">Point de Vente (POS)</td>
+                                    <tr className="module-group">
+                                        <td rowspan="3" className="item">Point de Vente (POS)</td>
                                         <td>POS</td>
                                         <td>15$</td>
                                         <td>85$</td>
                                         <td>800$</td>
                                     </tr>
-                                    <tr class="module-group">
+                                    <tr className="module-group">
                                         <td>POS & Comptabilité</td>
                                         <td>40$</td>
                                         <td>110$</td>
                                         <td>3300$</td>
                                     </tr>
-                                    <tr class="module-group">
+                                    <tr className="module-group">
                                         <td>POS & Comptabilité & RH</td>
                                         <td>40$ + 2$/Employé</td>
                                         <td>110$ + 2$/Employé</td>
@@ -96,7 +106,7 @@ export default class PricingPage extends Component {
                                     {/* Module Facturation */}
 
                                     <tr>
-                                        <td rowspan="3" class="item">Facturation</td>
+                                        <td rowspan="3" className="item">Facturation</td>
                                         <td>POS</td>
                                         <td>15$</td>
                                         <td>85$</td>
@@ -117,26 +127,26 @@ export default class PricingPage extends Component {
 
                                     {/* Module Hebergement */}
 
-                                    <tr class="module-group">
-                                        <td rowspan="4" class="item">Hébergement</td>
+                                    <tr className="module-group">
+                                        <td rowspan="4" className="item">Hébergement</td>
                                         <td>Hébergement</td>
                                         <td>100$</td>
                                         <td>-</td>
                                         <td>2500$</td>
                                     </tr>
-                                    <tr class="module-group">
+                                    <tr className="module-group">
                                         <td>Hébergement & Restaurant</td>
                                         <td>130$</td>
                                         <td>-</td>
                                         <td>4000$</td>
                                     </tr>
-                                    <tr class="module-group">
+                                    <tr className="module-group">
                                         <td>Hébergement & Restaurant & Comptabilité</td>
                                         <td>155$</td>
                                         <td>-</td>
                                         <td>6000$</td>
                                     </tr>
-                                    <tr class="module-group">
+                                    <tr className="module-group">
                                         <td>Hébergement & Restaurant & Comptabilité & RH</td>
                                         <td>40$ + 2$/Employé</td>
                                         <td>110$ + 2$/Employé</td>
@@ -147,7 +157,7 @@ export default class PricingPage extends Component {
 
                             {/* Pricing Online */}
 
-                            <table class="online">
+                            <table className="online">
                                 <thead>
                                     <tr>
                                         <th>Modules</th>
@@ -160,7 +170,7 @@ export default class PricingPage extends Component {
                                 <tbody>
 
                                     <tr>
-                                        <td rowspan="3" class="item">Restaurant</td>
+                                        <td rowspan="3" className="item">Restaurant</td>
                                         <td>Restaurant</td>
                                         <td>30$</td>
                                         <td>110$</td>
@@ -180,19 +190,19 @@ export default class PricingPage extends Component {
 
                                     {/* Module Point Of Sales  */}
 
-                                    <tr class="module-group">
-                                        <td rowspan="3" class="item">Point de Vente (POS)</td>
+                                    <tr className="module-group">
+                                        <td rowspan="3" className="item">Point de Vente (POS)</td>
                                         <td>POS</td>
                                         <td>15$</td>
                                         <td>85$</td>
                                         <td rowspan="3">Sur devis</td>
                                     </tr>
-                                    <tr class="module-group">
+                                    <tr className="module-group">
                                         <td>POS & Comptabilité</td>
                                         <td>40$</td>
                                         <td>110$</td>
                                     </tr>
-                                    <tr class="module-group">
+                                    <tr className="module-group">
                                         <td>POS & Comptabilité & RH</td>
                                         <td>40$ + 2$/Employé</td>
                                         <td>110$ + 2$/Employé</td>
@@ -201,7 +211,7 @@ export default class PricingPage extends Component {
                                     {/* Module Facturation  */}
 
                                     <tr>
-                                        <td rowspan="3" class="item">Facturation</td>
+                                        <td rowspan="3" className="item">Facturation</td>
                                         <td>POS</td>
                                         <td>15$</td>
                                         <td>85$</td>
@@ -220,24 +230,24 @@ export default class PricingPage extends Component {
 
                                     {/* Module Hebergement  */}
 
-                                    <tr class="module-group">
-                                        <td rowspan="4" class="item">Hébergement</td>
+                                    <tr className="module-group">
+                                        <td rowspan="4" className="item">Hébergement</td>
                                         <td>Hébergement</td>
                                         <td>100$</td>
                                         <td>-</td>
                                         <td rowspan="4">Sur devis</td>
                                     </tr>
-                                    <tr class="module-group">
+                                    <tr className="module-group">
                                         <td>Hébergement & Restaurant</td>
                                         <td>130$</td>
                                         <td>-</td>
                                     </tr>
-                                    <tr class="module-group">
+                                    <tr className="module-group">
                                         <td>Hébergement & Restaurant & Comptabilité</td>
                                         <td>155$</td>
                                         <td>-</td>
                                     </tr>
-                                    <tr class="module-group">
+                                    <tr className="module-group">
                                         <td>Hébergement & Restaurant & Comptabilité & RH</td>
                                         <td>40$ + 2$/Employé</td>
                                         <td>110$ + 2$/Employé</td>
@@ -247,7 +257,6 @@ export default class PricingPage extends Component {
                         </div>
                     </div>
                 </section>
-                <FooterComponent />
             </div>
         )
     }

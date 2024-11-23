@@ -1,50 +1,60 @@
-import React, { Component } from 'react'
+import React, { Component, createRef } from 'react'
 import HeaderComponent from '../components/header'
-import FooterComponent from '../components/footer'
+import Modal from "../components/modal/modal";
 import './style.css'
 import Faqs from '../components/faqs'
 
 export default class ContactPage extends Component {
+    constructor(props) {
+        super(props);
+        this.modalRef = createRef();
+    }
     render() {
+        const handleOpenModal = () => {
+            if (this.modalRef.current) {
+                this.modalRef.current.openModal();
+            }
+        }
         return (
             <div>
-                <HeaderComponent />
+                <HeaderComponent openModal={handleOpenModal} />
+                <Modal ref={this.modalRef} />
                 <section id="Contact-us">
-                    <div class="container">
-                        <div class="contact-erea">
-                            <h2 class="title-section">Contactez-nous</h2>
+                    <div className="container">
+                        <div className="contact-erea">
+                            <h2 className="title-section">Contactez-nous</h2>
                             <p>N'hésitez pas à nous contacter pour discuter de vos projets.
                                 Notre équipe est là pour vous aider à <br />concrétiser vos idées et à atteindre vos objectifs
                                 numériques.
                             </p>
 
-                            <div class="contact-data">
-                                <div class="contact-tel" data-aos="fade-right" data-aos-duration="1500">
-                                    <div class="contact-card">
-                                        <div class="circle-conctat-icon">
+                            <div className="contact-data">
+                                <div className="contact-tel" data-aos="fade-right" data-aos-duration="1500">
+                                    <div className="contact-card">
+                                        <div className="circle-conctat-icon">
                                             <ion-icon name="call-outline"></ion-icon>
                                         </div>
-                                        <div class="phone">
+                                        <div className="phone">
                                             <h3>Numéro de téléphone</h3>
                                             <span>+243 854 077 705</span>
                                         </div>
                                     </div>
 
-                                    <div class="contact-card">
-                                        <div class="circle-conctat-icon">
+                                    <div className="contact-card">
+                                        <div className="circle-conctat-icon">
                                             <ion-icon name="mail-outline"></ion-icon>
                                         </div>
-                                        <div class="phone">
+                                        <div className="phone">
                                             <h3>Adresse mail</h3>
                                             <span>contact@ebutelo.com</span>
                                         </div>
                                     </div>
 
-                                    <div class="contact-card">
-                                        <div class="circle-conctat-icon">
+                                    <div className="contact-card">
+                                        <div className="circle-conctat-icon">
                                             <ion-icon name="location-outline"></ion-icon>
                                         </div>
-                                        <div class="phone">
+                                        <div className="phone">
                                             <h3>Adresse physique</h3>
                                             <span>N°1, Av. Mpolo Maurice, C/Gombe</span>
                                         </div>
@@ -52,31 +62,31 @@ export default class ContactPage extends Component {
                                 </div>
 
 
-                                <div class="contact-form">
+                                <div className="contact-form">
                                     <form method="">
-                                        <div class="input-label">
+                                        <div className="input-label">
                                             <label for="name">Entrez ici votre nom</label>
                                             <input id="name" type="text" placeholder="Ex. Jean-Luc Binyavanga" />
                                         </div>
 
-                                        <div class="input-label">
+                                        <div className="input-label">
                                             <label for="mail">Entrez ici votre Adresse mail</label>
                                             <input id="mail" type="mail" placeholder="Ex. adresse@exemple.com" />
                                         </div>
 
-                                        <div class="input-label">
+                                        <div className="input-label">
                                             <label for="phone">Entrez ici votre numéro téléphone</label>
                                             <input id="phone" type="number" placeholder="Ex. (+243) 840 854 214" />
                                         </div>
 
-                                        <div class="input-label">
+                                        <div className="input-label">
                                             <label for="subject">Entrez ici votre sujet</label>
                                             <input id="subject" type="text" placeholder="Ex. Demande de dévis" />
                                         </div>
 
-                                        <div class="input-label">
+                                        <div className="input-label">
                                             <label for="message">Ecrivez votre message ici</label>
-                                            <textarea placeholder="Message..." class="txtarea" id="message" rows="5"></textarea>
+                                            <textarea placeholder="Message..." className="txtarea" id="message" rows="5"></textarea>
                                             <input type="submit" value="Envoyez" />
                                         </div>
 
@@ -87,7 +97,6 @@ export default class ContactPage extends Component {
                     </div>
                 </section>
                 <Faqs />
-                <FooterComponent />
             </div>
         )
     }

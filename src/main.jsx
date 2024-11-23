@@ -5,7 +5,7 @@ import App from './App.jsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import ContactPage from './contact/contact.jsx';
 import PricingPage from './pricing/pricing.jsx';
-import Modal from './components/modal/modal.jsx';
+import FooterComponent from './components/footer.jsx';
 
 
 const routes = createBrowserRouter([
@@ -25,7 +25,7 @@ const routes = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    {/* <Modal /> */}
     <RouterProvider router={routes} />
+    <FooterComponent></FooterComponent>
   </StrictMode>,
 )

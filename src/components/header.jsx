@@ -109,7 +109,6 @@ class HeaderComponent extends Component {
                         </Link>
                     </div>
 
-                    {/* Navigation */}
                     <nav ref={this.navRef}>
                         <ul>
                             <li>
@@ -127,12 +126,7 @@ class HeaderComponent extends Component {
                         </ul>
                     </nav>
 
-                    <button
-                        ref={this.buttonRef}
-                        onClick={openModal}
-                    >
-                        Créer votre compte
-                    </button>
+                    <button ref={this.buttonRef} onClick={this.props.openModal}>Créer votre compte</button>
 
                     <div className="hamburger" ref={this.hamburgerRef}></div>
                 </div>
