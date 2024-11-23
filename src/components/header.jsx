@@ -114,9 +114,9 @@ class HeaderComponent extends Component {
                             <li>
                                 <Link to="/">Accueil</Link>
                             </li>
-                            <li>
+                            {/* <li>
                                 <Link to="/about">À propos</Link>
-                            </li>
+                            </li> */}
                             <li>
                                 <Link to="/pricing">Tarif</Link>
                             </li>

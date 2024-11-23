@@ -3,7 +3,6 @@ import gsap from 'gsap';
 import { Link } from "react-router-dom";
 import { useGSAP } from "@gsap/react";
 import HeaderComponent from './components/header'
-import FooterComponent from './components/footer'
 import Faqs from "./components/faqs";
 import animationGsap from "../public/animations";
 import WroteEffect from "../public/textEffect";
@@ -83,7 +82,7 @@ export default function App() {
               efficace
               et une visibilité en temps réel pour soutenir votre croissance et améliorer vos performances.
             </p>
-            <Link to='/'> <button>Essai gratuit</button></Link>
+            <button onClick={handleOpenModal}>Essai gratuit</button>
             <div className="statistic">
               <div className="data">
                 <h3>Clients</h3>
@@ -317,7 +316,7 @@ export default function App() {
         <div className="container">
           <h1>Essayez notre ERP gratuitement dès aujourd'hui et transformez votre gestion d'entreprise !</h1>
           <p>Notre ERP est conçu pour simplifier la gestion de votre entreprise, quel que soit votre secteur d'activité. En centralisant vos données, il vous permet de mieux contrôler vos finances, vos stocks et vos ressources humaines, tout en réduisant les erreurs et les coûts. Avec des outils adaptés à chaque besoin, notre solution vous aide à prendre des décisions plus éclairées, à optimiser vos processus et à gagner en efficacité. Profitez d'une solution modulable, évolutive et parfaitement intégrée à vos besoins. Testez-le gratuitement dès maintenant et voyez la différence !</p>
-          <Link to='/'><button>Essayer gratuitement</button></Link>
+          <button onClick={handleOpenModal}>Essayer gratuitement</button>
         </div>
       </section>
 
