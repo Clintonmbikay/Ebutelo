@@ -553,7 +553,7 @@ header .hamburger::after {
 
 /* ************************************** Call to Action Section ******************************************* */
 #Call-to-action {
-    background-image: url(../public/images/call-to-action.jpg);
+    background-image: url(../images/call-to-action.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;

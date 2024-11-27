@@ -99,7 +99,7 @@ export default function App() {
             </div>
           </div>
           <div className="right-side">
-            <img src="../public/images/dashboard-ebu.jpg" alt="" />
+            <img src="../images/dashboard-ebu.jpg" alt="" />
           </div>
         </div>
       </section>
@@ -120,7 +120,7 @@ export default function App() {
             <Link to='/contact'><button>En savoir plus</button></Link>
           </div>
           <div className="right-side">
-            <img src="../public/images/Desktop.png" alt="" />
+            <img src="../images/Desktop.png" alt="" />
           </div>
         </div>
       </section>
@@ -202,7 +202,7 @@ export default function App() {
       <section id="why-choose-us">
         <div className="container">
           <div className="left-side">
-            <img id="choose-img" src="../public/images/why.png" alt="" />
+            <img id="choose-img" src="../images/why.png" alt="" />
             <div className="reasons">
               <div className="card">
                 <div className="icon"><ion-icon name="balloon-outline"></ion-icon></div>

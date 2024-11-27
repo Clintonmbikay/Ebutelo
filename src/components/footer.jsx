@@ -8,7 +8,7 @@ class FooterComponent extends Component {
                 <div className="container">
                     <div className="wrapper">
                         <div className="col">
-                            <img src="../../public/images/ebutelo white.png" alt="Logo Ebutelo" />
+                            <img src="../../images/ebutelo white.png" alt="Logo Ebutelo" />
                             <p>
                                 Logiciel de gestion ERP pour les secteurs de l'hôtellerie, de la prestation de services et du commerce de détail/gros.
                                 Reparti en plusieurs modules, vous pouvez l'utiliser en ligne ou en local avec des fonctionnalités

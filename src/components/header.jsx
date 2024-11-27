@@ -103,7 +103,7 @@ class HeaderComponent extends Component {
                         <Link to="/">
                             <img
                                 ref={this.logoRef}
-                                src="../../public/images/ebutelo.png"
+                                src="../../images/ebutelo.png"
                                 alt="Logo Ebutelo"
                             />
                         </Link>
